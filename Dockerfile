@@ -23,12 +23,16 @@ WORKDIR /app
 # Copy your application code into the container (if needed)
 COPY . /app
 
-# Build
-RUN ./gradlew nativeCompile
+RUN ./gradlew :bootJar
 
-RUN cp /app/build/native/nativeCompile/whiz_eureka /home/
+# Build
+#RUN ./gradlew nativeCompile
+
+RUN cp /app/build/libs/whiz_eureka-0.0.1-SNAPSHOT.jar /home/
 
 RUN rm -rf /app
 
+#ENTRYPOINT ["/home/whiz_eureka"]
+
+ENTRYPOINT ["java","-jar","/home/whiz_eureka-0.0.1-SNAPSHOT.jar"]
 EXPOSE 8761
-ENTRYPOINT ["/home/whiz_eureka"]
