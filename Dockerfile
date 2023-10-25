@@ -35,4 +35,4 @@ RUN rm -rf /app
 #ENTRYPOINT ["/home/whiz_eureka"]
 
 ENTRYPOINT ["java","-jar","/home/whiz_eureka-0.0.1-SNAPSHOT.jar"]
-EXPOSE 8761
+EXPOSE 3000
