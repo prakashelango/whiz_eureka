@@ -29,10 +29,9 @@ RUN ./gradlew :bootJar
 #RUN ./gradlew nativeCompile
 
 RUN cp /app/build/libs/whiz_eureka-0.0.1-SNAPSHOT.jar /home/
-
 RUN rm -rf /app
 
 #ENTRYPOINT ["/home/whiz_eureka"]
 
-ENTRYPOINT ["java","-jar","/home/whiz_eureka-0.0.1-SNAPSHOT.jar"]
 EXPOSE 3000
+ENTRYPOINT ["java","-jar","/home/whiz_eureka-0.0.1-SNAPSHOT.jar"]

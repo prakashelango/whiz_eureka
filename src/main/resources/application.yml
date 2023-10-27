@@ -1,11 +1,10 @@
 server:
-  port: 3000
+  port: 8761
 eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
-    serviceUrl:
-      defaultZone: https://whizeureka-production.up.railway.app,https://whizeureka-production.up.railway.app:3000
+
 #  cloud:
 #    refresh:
 #      enabled: false
